@@ -20,7 +20,9 @@ jobs:
         USER: ${{ secrets.USER }}
         PASS: ${{ secrets.PASS }}
       run: |
-        docker build . --gile Dockerfile --tag MukundWaghmare27/github:latest
+        echo $USER
+        echo $PASS
+        docker build . --gile Dockerfile --tag MukundWaghmare27/:latest
         docker login -u $USER -p PASS
 
         docker push MukundWaghmare27/github:latest
