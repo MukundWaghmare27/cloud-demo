@@ -15,4 +15,16 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      #run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      env:
+        USER: ${{ secrets.USER }}
+        PASS: ${{ secrets.PASS }}
+      run: |
+        docker build . --gile Dockerfile --tag MukundWaghmare27/github:latest
+        docker login -u $USER -p PASS
+
+        docker push MukundWaghmare27/github:latest
+
+
+
+        
