@@ -20,12 +20,10 @@ jobs:
         USER: ${{ secrets.USER }}
         PASS: ${{ secrets.PASS }}
       run: |
-        echo $USER
-        echo $PASS
-        docker build . --gile Dockerfile --tag MukundWaghmare27/:latest
+        docker build . --gile Dockerfile --tag mukund27/cdac-dhpcap
         docker login -u $USER -p PASS
 
-        docker push MukundWaghmare27/github:latest
+        docker push mukund27/cdac-dhpcap
 
 
 
